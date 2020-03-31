@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GSBVisiteur</string>
+    <string name="Id">Id </string>
+    <string name="login">Login </string>
+    <string name="password">Mot de passe </string>
+    <string name="nom">Nom </string>
+    <string name="prenom">Prenom </string>
+    <string name ="ajouter"> Ajouter</string>
+    <string name ="supprimer"> Supprimer</string>
+    <string name ="afficher"> Afficher</string>
+    <string name ="affichertout"> Tout Afficher</string>
+    <string name ="suivant"> Suivant</string>
+    <string name ="precedent"> Precedent</string>
+    <string name ="premier"> Premier</string>
+    <string name ="reset"> Reset</string>
+</resources>

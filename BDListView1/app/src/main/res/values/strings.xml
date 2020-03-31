@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Liste des visiteurs</string>
+    <string name="some_text">Liste des visiteurs</string>
+    <string name="some_hint">Saisir pour filtrer</string>
+</resources>

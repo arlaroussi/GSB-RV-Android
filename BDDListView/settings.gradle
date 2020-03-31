@@ -1,0 +1,2 @@
+rootProject.name='BDDListView'
+include ':app'

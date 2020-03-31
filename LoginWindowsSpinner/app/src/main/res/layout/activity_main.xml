@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+   <TextView
+        android:id="@+id/titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:background="#B4CFEC"
+        android:textColor="#6A287E"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
+        android:text="Fenêtre de connexion" />
+
+    <Spinner
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/titre"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-250dp"
+        android:textSize="20dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Email" />
+
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-130dp"
+        android:textSize="20dp"
+        android:ems="10"
+        android:inputType="textWebPassword"
+        android:hint="Password" />
+
+
+    <Button
+        android:id="@+id/valider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/password"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="70dp"
+        android:layout_marginBottom="-200dp"
+        android:text="Valider"
+        android:paddingHorizontal="25dp"/>
+
+    <Button
+        android:id="@+id/annuler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/password"
+        android:layout_toRightOf="@id/valider"
+        android:layout_marginBottom="-200dp"
+        android:layout_centerVertical="false"
+        android:layout_marginLeft="40dp"
+        android:text="Reset" />
+
+</RelativeLayout>

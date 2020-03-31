@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/FenBase"
+    android:stretchColumns="10"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TableRow android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView android:text="Gestion des visiteurs"
+                android:layout_column="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow
+        android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView android:text="@string/Id"
+                android:layout_column="1" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/edtId"
+                android:inputType="number"
+                android:layout_column="2"
+                android:layout_width="150dp"
+                android:layout_height="40dp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView android:text="@string/nom"
+                android:layout_column="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText android:id="@+id/edtNom"
+                android:inputType="text"
+                android:layout_column="2"
+                android:layout_width="150dp"
+                android:layout_height="40dp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView
+                android:text="@string/prenom"
+                android:layout_column="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText android:id="@+id/edtPrenom"
+                android:inputType="text"
+                android:layout_column="2"
+                android:layout_width="150dp"
+                android:layout_height="40dp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView android:text="@string/login"
+                android:layout_column="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText android:id="@+id/edtLogin"
+                android:inputType="text"
+                android:layout_column="2"
+                android:layout_width="150dp"
+                android:layout_height="40dp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView android:text="@string/password"
+                android:layout_column="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText android:id="@+id/edtPassword"
+                android:inputType="textPassword"
+                android:layout_column="2"
+                android:layout_width="150dp"
+                android:layout_height="40dp" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <Button
+                android:id="@+id/btnAjouter"
+                android:text="@string/ajouter"
+                android:layout_column="1"
+                android:layout_width="100dp"
+                android:layout_height="40dp" />
+            <Button
+                android:id="@+id/btnSupprimer"
+                android:text="@string/supprimer"
+                android:layout_column="2"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <Button
+                android:id="@+id/btnReset"
+                android:text="@string/reset"
+                android:layout_column="1"
+                android:layout_width="100dp"
+                android:layout_height="40dp" />
+            <Button
+                android:id="@+id/btnAffichertout"
+                android:text="@string/affichertout"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_column="2" />
+        </TableRow>
+    </TableLayout>
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
