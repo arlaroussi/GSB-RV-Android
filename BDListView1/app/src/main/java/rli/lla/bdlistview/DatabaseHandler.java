@@ -43,26 +43,27 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     KEY_LOGIN + "," +
                     " UNIQUE (" + KEY_CODE +"));";
 
-        DatabaseHandler(Context context) {
+    DatabaseHandler(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
             mCtx = null;
-        }
+    }
 
-        @Override
-        public void onCreate(SQLiteDatabase db) {
-            Log.w(TAG, DATABASE_CREATE);
-            db.execSQL(DATABASE_CREATE);
-        }
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        Log.w(TAG, DATABASE_CREATE);
+        db.execSQL(DATABASE_CREATE);
+    }
 
-        @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            Log.w(TAG, "Upgrading database from version " + oldVersion + " to "
-                    + newVersion + ", which will destroy all old data");
-            db.execSQL("DROP TABLE IF EXISTS " + SQLITE_TABLE);
-            onCreate(db);
-        }
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        Log.w(TAG, "Upgrading database from version " + oldVersion + " to "
+                + newVersion + ", which will destroy all old data");
+        db.execSQL("DROP TABLE IF EXISTS " + SQLITE_TABLE);
+        onCreate(db);
+    }
 
     private static  DatabaseHandler mInstance = null;
+
     public static DatabaseHandler getmInstance(Context context){
         if(mInstance==null){
             mInstance = new DatabaseHandler(context.getApplicationContext());

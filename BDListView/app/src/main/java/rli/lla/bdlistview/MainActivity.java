@@ -15,7 +15,6 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
     private DatabaseHandler dbHelper;
     private VisiteurAdapter dataAdapter;
 
@@ -35,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Générer un ListView lié à la BDD
         displayListView();
-
-    }
+   }
 
     private void displayListView() {
 

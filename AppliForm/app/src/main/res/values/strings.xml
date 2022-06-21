@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AppliForm</string>
+    <string-array name="liste_pays">
+        <item>France</item>
+        <item>Allemagne</item>
+        <item>Belgique</item>
+        <item>Finlande</item>
+   </string-array>
 </resources>

@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private DatabaseHandler db;
     private VisiteurAdapter dataAdapter;
+    ListView mListView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,35 +28,24 @@ public class MainActivity extends AppCompatActivity {
 
         db = DatabaseHandler.getmInstance(getApplicationContext());
 
+
         //Ajouter des données à la table
         db.insertVisiteurs();
 
-        ListView mListView = (ListView) findViewById(R.id.listView);
+        mListView = (ListView) findViewById(R.id.listView);
 
         Cursor cursor = db.fetchAllVisiteurs();
 
         if(cursor != null){
-            dataAdapter = new VisiteurAdapter(getApplicationContext(), cursor, 0);
+            dataAdapter = new VisiteurAdapter(getApplicationContext(), cursor);
             mListView.setAdapter(dataAdapter);
         }
-        EditText monFilter = (EditText) findViewById(R.id.myFilter);
+        Toast.makeText(this, "Data has been saved successfully!", Toast.LENGTH_LONG);
 
-        monFilter.addTextChangedListener(new TextWatcher() {
-            public void afterTextChanged(Editable s) {  }
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {  }
-
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                dataAdapter.getFilter().filter(s.toString());
-            }
-        });
-
-        dataAdapter.setFilterQueryProvider(new FilterQueryProvider() {
-            public Cursor runQuery(CharSequence constraint) {
-                return db.fetchVisiteurParNom(constraint.toString());
-            }
-        });
     }
+
+
 }
 
 

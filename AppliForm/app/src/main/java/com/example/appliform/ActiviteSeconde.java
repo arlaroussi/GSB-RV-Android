@@ -1,23 +1,13 @@
 package com.example.appliform;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Toast;
-import android.text.TextWatcher;
-import android.text.Editable;
-import android.app.AlertDialog;
-import android.content.Intent;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class ActiviteSeconde extends AppCompatActivity {

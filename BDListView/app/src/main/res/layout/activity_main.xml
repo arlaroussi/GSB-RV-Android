@@ -7,9 +7,14 @@
         android:layout_height="wrap_content" android:padding="10dp"
         android:text="@string/some_text" android:textSize="20sp" />
 
-    <EditText android:id="@+id/myFilter" android:layout_width="match_parent"
-        android:layout_height="wrap_content" android:ems="10"
-        android:hint="@string/some_hint">Liste des visiteurs/>
+    <EditText
+        android:id="@+id/myFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/some_hint"
+        android:minHeight="48dp">Liste des visiteurs/>
+
         <requestFocus />
     </EditText>
 

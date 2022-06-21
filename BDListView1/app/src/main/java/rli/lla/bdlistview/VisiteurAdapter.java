@@ -5,35 +5,49 @@ import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
-public class VisiteurAdapter extends CursorAdapter {
+import java.util.ArrayList;
 
-       public VisiteurAdapter(Context context, Cursor cursor, int flag){
-            super(context, cursor, 0);
-        }
+public class VisiteurAdapter extends BaseAdapter {
 
-        public void bindView(View view, Context context, Cursor cursor){
-
-            TextView visCode = (TextView) view.findViewById(R.id.tvCode);
-            TextView visNom = (TextView) view.findViewById(R.id.tvNom);
-            TextView visPrenom = (TextView) view.findViewById(R.id.tvPrenom);
-            TextView visLogin = (TextView) view.findViewById(R.id.tvLogin);
-
-            String code = cursor.getString(cursor.getColumnIndex("code"));
-            String nom = cursor.getString(cursor.getColumnIndex("nom"));
-            String prenom = cursor.getString(cursor.getColumnIndex("prenom"));
-            String login = cursor.getString(cursor.getColumnIndex("login"));
-
-            visCode.setText(code);
-            visNom.setText(nom);
-            visPrenom.setText(prenom);
-            visLogin.setText(login);
-        }
-
-        public View newView(Context context, Cursor cursor, ViewGroup parent){
-            return LayoutInflater.from(context).inflate(R.layout.visiteur_items, parent,false);
-        }
+    public VisiteurAdapter(Context context, ArrayList<Visiteur> visiteurs) {
+        super(context, 0, visiteurs);
     }
 
+    @Override
+
+    public View getView(int position, View convertView, ViewGroup parent) {
+
+        // Obtenir la donnée à partir de la position
+        Visiteur visiteur = getItem(position);
+
+        // Check if an existing view is being reused, otherwise inflate the view
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.visiteur_items, parent, false);
+        }
+
+        // Lookup view for data population
+
+        TextView code = (TextView) convertView.findViewById(R.id.tvId);
+        TextView nom = (TextView) convertView.findViewById(R.id.tvNom);
+        TextView pren = (TextView) convertView.findViewById(R.id.tvPrenom);
+        TextView login = (TextView) convertView.findViewById(R.id.tvLogin);
+
+        // Populate the data into the template view using the data object
+
+        code.setText(visiteur.getCode());
+        nom.setText(visiteur.getNom());
+        pren.setText(visiteur.getPrenom());
+        login.setText(visiteur.getLogin());
+
+        // Return the completed view to render on screen
+
+        return convertView;
+
+    }
+
+}
